@@ -14,9 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Add hover effect to interactive elements
     const hoverTargets = [
-        'a', 'button', '.btn', 
+        'button', '.btn', 
         '[role="button"]', '.info-box',
-        'input', 'textarea', 'select'
+        'input', 'textarea', 'select',
+        'a:not(.developer-link)'
     ];
     
     hoverTargets.forEach(selector => {
@@ -29,4 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    // Make sure developer link is clickable
+    const devLink = document.querySelector('.developer-link');
+    if (devLink) {
+        devLink.style.position = 'relative';
+        devLink.style.zIndex = '10001';
+    }
 });

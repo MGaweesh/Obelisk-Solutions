@@ -318,35 +318,13 @@ window.addEventListener('scroll', function() {
         scrollTopBtn.id = 'scrollTopBtn';
         scrollTopBtn.innerHTML = '↑';
         scrollTopBtn.onclick = scrollToTop;
-        scrollTopBtn.style.cssText = `
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: linear-gradient(135deg, #ff6b35, #f7931e);
-            color: #000;
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            display: none;
-        `;
         document.body.appendChild(scrollTopBtn);
     }
     
     if (window.scrollY > 300) {
-        scrollTopBtn.style.display = 'block';
-        scrollTopBtn.style.opacity = '1';
+        scrollTopBtn.classList.add('visible');
     } else {
-        scrollTopBtn.style.opacity = '0';
-        setTimeout(() => {
-            if (window.scrollY <= 300) scrollTopBtn.style.display = 'none';
-        }, 300);
+        scrollTopBtn.classList.remove('visible');
     }
 });
 
