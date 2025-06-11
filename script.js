@@ -294,60 +294,27 @@ document.addEventListener('DOMContentLoaded', function() {
         link.style.transition = 'color 0.3s ease';
     });
     
-    // Mobile Menu Functionality
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const mobileMenuClose = document.querySelector('.mobile-menu-close');
-    const navMenu = document.querySelector('.nav-menu');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const navOverlay = document.querySelector('.nav-overlay');
-    
-    // Toggle mobile menu
-    function toggleMenu() {
-        const isOpening = !navMenu.classList.contains('active');
+    // Initialize navigation and smooth scrolling
+    function initNavigation() {
+        const navLinks = document.querySelectorAll('.nav-link');
         
-        if (isOpening) {
-            // Opening the menu
-            navMenu.classList.add('active');
-            document.body.classList.add('menu-open');
-            document.documentElement.style.overflow = 'hidden';
-            document.body.style.overflow = 'hidden';
-        } else {
-            // Closing the menu
-            navMenu.classList.remove('active');
-            document.body.classList.remove('menu-open');
-            document.documentElement.style.overflow = '';
-            document.body.style.overflow = '';
-        }
-    }
-    
-    // Initialize mobile menu and smooth scrolling
-    function initMobileMenu() {
-        // Close menu when clicking on a nav link
+        // Smooth scroll for navigation links
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
-                e.preventDefault();
                 const targetId = link.getAttribute('href');
-                
-                // Close menu
-                navMenu.classList.remove('active');
-                document.body.classList.remove('menu-open');
-                
-                // Update active link
-                navLinks.forEach(navLink => navLink.classList.remove('active'));
-                link.classList.add('active');
-                
-                // Scroll to section with offset for fixed header
-                if (targetId !== '#') {
-                    const targetSection = document.querySelector(targetId);
-                    if (targetSection) {
-                        const headerOffset = 80; // Adjust based on your header height
-                        const elementPosition = targetSection.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
+                if (targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
                         window.scrollTo({
-                            top: offsetPosition,
+                            top: targetElement.offsetTop - 80,
                             behavior: 'smooth'
                         });
+                        
+                        // Update active link
+                        navLinks.forEach(navLink => navLink.classList.remove('active'));
+                        link.classList.add('active');
                     }
                 }
             });
@@ -372,98 +339,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
-        
-        // Toggle menu when clicking the menu button
-        if (mobileMenuToggle) {
-            mobileMenuToggle.addEventListener('click', function(e) {
-                e.stopPropagation();
-                toggleMenu();
-            });
-        }
-        
-        // Close menu when clicking the close button
-        if (mobileMenuClose) {
-            mobileMenuClose.addEventListener('click', function(e) {
-                e.stopPropagation();
-                toggleMenu();
-            });
-        }
-        
-        // Close menu when clicking on overlay
-        if (navOverlay) {
-            navOverlay.addEventListener('click', function() {
-                toggleMenu();
-            });
-        }
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (navMenu && mobileMenuToggle) {
-                if (!navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-                    if (navMenu.classList.contains('active')) {
-                        toggleMenu();
-                    }
-                }
-            }
-        });
-        
-        // Close menu when pressing Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && navMenu && navMenu.classList.contains('active')) {
-                toggleMenu();
-            }
-        });
     }
     
-    // Initialize mobile menu when DOM is loaded
+    // Initialize navigation when DOM is loaded
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initMobileMenu);
+        document.addEventListener('DOMContentLoaded', initNavigation);
     } else {
-        initMobileMenu();
+        initNavigation();
     }
     
-    // Theme Toggle Functionality
-    const themeToggle = document.querySelector('.theme-toggle');
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    
-    // Check for saved user preference, if any, on load of the website
-    const currentTheme = localStorage.getItem('theme') || (prefersDarkScheme.matches ? 'dark' : 'light');
-    document.documentElement.classList.toggle('light-mode', currentTheme === 'light');
-    
-    // Update the toggle icon based on the current theme
-    function updateIcon() {
-        const icon = themeToggle?.querySelector('i');
-        if (icon) {
-            icon.className = currentTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
-        }
+    // Smooth scroll to top function
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     }
-    
-    // Initial icon update
-    updateIcon();
-    
-    // Toggle theme when the button is clicked
-    themeToggle?.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const isLight = document.documentElement.classList.toggle('light-mode');
-        const theme = isLight ? 'light' : 'dark';
-        localStorage.setItem('theme', theme);
-        updateIcon();
-    });
 });
-
-// Mobile menu toggle (for future mobile menu implementation)
-function toggleMobileMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('mobile-active');
-}
-
-// Smooth scroll to top function
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
 
 // Add scroll to top button
 window.addEventListener('scroll', function() {
