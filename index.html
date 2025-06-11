@@ -2,35 +2,98 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Obelisk Solutions - Elite business growth solutions for real estate professionals, solar installers, and roofing contractors.">
     <title>Obelisk Solutions - Business Growth Partners</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="cursor.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- Favicon -->
     <link rel="icon" href="Obelisk solutions logo.png" type="image/png">
     
-
-</head>
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="cursor.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <noscript>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="cursor.css">
+    </noscript>
 <body>
     <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="logo"><img src="Obelisk solutions logo.png" alt="Obelisk Solutions" class="logo-img"><span class="logo-text">Obelisk Solutions</span></a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#video-reviews">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+    <header class="site-header">
+        <div class="container">
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="index.html" class="logo" aria-label="Obelisk Solutions - Home">
+                    <img src="Obelisk solutions logo.png" alt="" class="logo-img" width="40" height="40" loading="lazy">
+                    <span class="logo-text">Obelisk Solutions</span>
+                </a>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" 
+                        aria-label="Toggle menu" 
+                        aria-expanded="false" 
+                        aria-controls="primary-navigation"
+                        data-menu-toggle>
+                    <span class="sr-only">Menu</span>
+                    <span class="hamburger" aria-hidden="true"></span>
+                </button>
+                
+                <!-- Navigation Links -->
+                <div class="nav-menu" id="primary-navigation" aria-hidden="true" data-visible="false">
+                    <button class="mobile-menu-close" aria-label="Close menu" aria-expanded="false">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
+                    <ul class="nav-links" role="menubar">
+                        <li role="none">
+                            <a href="#home" class="nav-link active" role="menuitem" data-section="home" tabindex="-1">
+                                <i class="fas fa-home" aria-hidden="true"></i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li role="none">
+                            <a href="#services" class="nav-link" data-section="services" tabindex="-1">
+                                <i class="fas fa-cogs" aria-hidden="true"></i>
+                                <span>Services</span>
+                            </a>
+                        </li>
+                        <li role="none">
+                            <a href="#about" class="nav-link" data-section="about" tabindex="-1">
+                                <i class="fas fa-info-circle" aria-hidden="true"></i>
+                                <span>About</span>
+                            </a>
+                        </li>
+                        <li role="none">
+                            <a href="#testimonials" class="nav-link" role="menuitem" data-section="testimonials" tabindex="-1">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <span>Testimonials</span>
+                            </a>
+                        </li>
+                        <li role="none">
+                            <a href="#contact" class="nav-link" data-section="contact" tabindex="-1">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                                <span>Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Overlay for mobile menu -->
+                <div class="nav-overlay" data-nav-overlay></div>
+            </nav>
         </div>
-    </nav>
+    </header>
     
     <!-- Theme Toggle -->
     <button class="theme-toggle" aria-label="Toggle theme">
         <i class="fas fa-moon"></i>
     </button>
+
+    <!-- Navigation Overlay -->
+    <div class="nav-overlay" data-nav-overlay aria-hidden="true" data-visible="false"></div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -313,29 +376,42 @@
     
     <!-- Scripts -->
     <script src="cursor.js" defer></script>
-    <script src="script.js" defer></script>
     <script src="js/stats-animation.js"></script>
+    <script src="script.js"></script>
     <script>
-        // Theme Toggle
-        const themeToggle = document.querySelector('.theme-toggle');
-        const icon = themeToggle.querySelector('i');
-        
-        // Check for saved theme preference
-        const currentTheme = localStorage.getItem('theme') || 'dark';
-        document.body.className = currentTheme;
-        updateIcon();
-        
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('light-mode');
-            const theme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
-            localStorage.setItem('theme', theme);
+        // Theme Toggle Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.querySelector('.theme-toggle');
+            if (!themeToggle) return;
+            
+            const icon = themeToggle.querySelector('i');
+            const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+            
+            // Check for saved user preference, if any, on load of the website
+            let currentTheme = localStorage.getItem('theme');
+            
+            // If no saved preference, use system preference
+            if (!currentTheme) {
+                currentTheme = prefersDarkScheme.matches ? 'dark' : 'light';
+            }
+            
+            // Apply the theme
+            document.documentElement.classList.toggle('light-mode', currentTheme === 'light');
             updateIcon();
+            
+            themeToggle.addEventListener('click', () => {
+                document.documentElement.classList.toggle('light-mode');
+                const theme = document.documentElement.classList.contains('light-mode') ? 'light' : 'dark';
+                localStorage.setItem('theme', theme);
+                updateIcon();
+            });
+            
+            function updateIcon() {
+                if (!icon) return;
+                const isLight = document.documentElement.classList.contains('light-mode');
+                icon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
+            }
         });
-        
-        function updateIcon() {
-            const isLight = document.body.classList.contains('light-mode');
-            icon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
-        }
         
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
