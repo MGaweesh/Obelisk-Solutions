@@ -1,0 +1,64 @@
+/* === Building-Themed Cursor === */
+body.custom-cursor-enabled {
+    cursor: none;
+}
+
+.building-cursor {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* Building base */
+.building-cursor::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+    width: 30px;
+    height: 30px;
+    background: var(--primary);
+    clip-path: polygon(0% 100%, 15% 0%, 85% 0%, 100% 100%);
+    transition: all 0.3s ease;
+}
+
+/* Building windows */
+.building-cursor::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 13px;
+    width: 4px;
+    height: 4px;
+    background: var(--dark-text);
+    box-shadow: 
+        0 6px 0 var(--dark-text),
+        0 12px 0 var(--dark-text),
+        12px 0 0 var(--dark-text),
+        12px 6px 0 var(--dark-text),
+        12px 12px 0 var(--dark-text);
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+body.cursor-hover .building-cursor {
+    transform: translate(-50%, -50%) scale(1.4);
+}
+
+body.cursor-hover .building-cursor::before {
+    background: var(--accent);
+}
+
+body.cursor-hover .building-cursor::after {
+    background: #fff;
+    box-shadow: 
+        0 6px 0 #fff,
+        0 12px 0 #fff,
+        12px 0 0 #fff,
+        12px 6px 0 #fff,
+        12px 12px 0 #fff;
+}

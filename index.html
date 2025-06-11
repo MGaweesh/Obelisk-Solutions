@@ -5,20 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Obelisk Solutions - Business Growth Partners</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cursor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="Obelisk solutions logo.png" type="image/png">
+    
+
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="#" class="logo">Obelisk Solutions</a>
+            <a href="#" class="logo"><img src="Obelisk solutions logo.png" alt="Obelisk Solutions" class="logo-img"><span class="logo-text">Obelisk Solutions</span></a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#video-reviews">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
+    
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+    </button>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -33,20 +45,20 @@
     <section class="stats">
         <div class="stats-container">
             <div class="stat-item">
-                <h3>20+</h3>
-                <p>Clients</p>
+                <span class="stat-number">20</span>
+                <span class="stat-label">Satisfied Clients</span>
             </div>
             <div class="stat-item">
-                <h3>50+</h3>
-                <p>Elite Team Members</p>
+                <span class="stat-number">50</span>
+                <span class="stat-label">Elite Team Members</span>
             </div>
             <div class="stat-item">
-                <h3>3000000+</h3>
-                <p>Power Calls Executed</p>
+                <span class="stat-number">3M</span>
+                <span class="stat-label">Power Calls Executed</span>
             </div>
             <div class="stat-item">
-                <h3>10000+</h3>
-                <p>High-Value Leads</p>
+                <span class="stat-number">10K</span>
+                <span class="stat-label">High-Value Leads</span>
             </div>
         </div>
     </section>
@@ -61,27 +73,35 @@
             
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">🏠</div>
-                    <h3>Real Estate Domination</h3>
-                    <p>Advanced lead generation, strategic property marketing, seamless transaction management, and elite negotiation support. We weaponize market intelligence and cutting-edge technology to help you close more deals faster than ever before.</p>
+                    <div class="service-card-content">
+                        <div class="service-icon">🏠</div>
+                        <h3>Real Estate Domination</h3>
+                        <p>Advanced lead generation, strategic property marketing, seamless transaction management, and elite negotiation support. We weaponize market intelligence and cutting-edge technology to help you close more deals faster than ever before.</p>
+                    </div>
                 </div>
                 
                 <div class="service-card">
-                    <div class="service-icon">⚡</div>
-                    <h3>Solar Power Solutions</h3>
-                    <p>Complete solar business acceleration including high-converting lead generation, project management excellence, system design optimization, and explosive marketing campaigns. Dominate the renewable energy market with our proven strategies.</p>
+                    <div class="service-card-content">
+                        <div class="service-icon">⚡</div>
+                        <h3>Solar Power Solutions</h3>
+                        <p>Complete solar business acceleration including high-converting lead generation, project management excellence, system design optimization, and explosive marketing campaigns.</p>
+                    </div>
                 </div>
                 
                 <div class="service-card">
-                    <div class="service-icon">🔨</div>
-                    <h3>Roofing Empire Building</h3>
-                    <p>Transform your roofing business with our systematic approach to client acquisition, operational optimization, and market dominance. We eliminate the guesswork and deliver consistent, high-quality leads that convert.</p>
+                    <div class="service-card-content">
+                        <div class="service-icon">🔨</div>
+                        <h3>Roofing Empire Building</h3>
+                        <p>Transform your roofing business with our systematic approach to client acquisition, operational optimization, and market dominance. We eliminate the guesswork and deliver consistent, high-quality leads.</p>
+                    </div>
                 </div>
                 
                 <div class="service-card">
-                    <div class="service-icon">⚙️</div>
-                    <h3>Technical Excellence</h3>
-                    <p>Premium technical support that goes beyond problem-solving. We optimize systems, enhance efficiency, and elevate customer satisfaction to create unstoppable business momentum and operational excellence.</p>
+                    <div class="service-card-content">
+                        <div class="service-icon">⚙️</div>
+                        <h3>Technical Excellence</h3>
+                        <p>Premium technical support that goes beyond problem-solving. We optimize systems, enhance efficiency, and elevate customer satisfaction to create unstoppable business momentum.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -90,102 +110,191 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
+            <div class="section-title">
+                <h2>The Obelisk Advantage</h2>
+                <p>Transforming businesses with innovative solutions and proven strategies for sustainable growth.</p>
+            </div>
+            
             <div class="about-content">
                 <div class="about-text">
-                    <h2>The Obelisk Advantage</h2>
                     <p>Born in Cairo, Egypt in 2023, Obelisk Solutions emerged from the competitive real estate cold-calling arena with one mission: to revolutionize how businesses acquire customers and scale operations.</p>
                     
-                    <p>What started as specialized customer acquisition has evolved into a comprehensive business growth powerhouse. We've cracked the code on lead generation, customer conversion, and operational excellence across multiple high-value industries.</p>
+                    <p>What started as specialized customer acquisition has evolved into a comprehensive business growth powerhouse. We’ve cracked the code on lead generation, customer conversion, and operational excellence across multiple high-value industries.</p>
                     
-                    <p>Our battle-tested team combines deep industry expertise with cutting-edge technology and relentless execution. We don't just provide services—we engineer success systems that transform ordinary businesses into market leaders.</p>
+                    <p>Our battle-tested team combines deep industry expertise with cutting-edge technology and relentless execution. We don’t just provide services—we engineer success systems that transform ordinary businesses into market leaders.</p>
                 </div>
                 
                 <div class="about-image">
                     <div>
                         <h3>Our Commitment</h3>
-                        <p>To be the unstoppable force behind your business growth, delivering results that exceed expectations and redefine what's possible in your industry.</p>
+                        <p>To be the unstoppable force behind your business growth, delivering results that exceed expectations and redefine what’s possible in your industry.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="contact-container">
-            <h2>Ready to Dominate?</h2>
-            <p class="contact-subtitle">Let's architect your path to market dominance. Every empire starts with a single conversation.</p>
+    <!-- Video Reviews Section -->
+    <section id="video-reviews" class="video-reviews">
+        <div class="container">
+            <div class="section-title">
+                <h2><i class="fas fa-play-circle"></i> <span>Testimonials</span></h2>
+                <p>Hear directly from our clients how Obelisk Solutions transformed their growth strategies.</p>
+            </div>
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/Z2nF2BbN_8k?autoplay=0&mute=1" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h4>Client Testimonial</h4>
+                </div>
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/Z2nF2BbN_8k?autoplay=0&mute=1" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h4>Client Testimonial</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Contact Section -->
+<section class="contact" id="contact">
+  <div class="contact-container">
+    <h2>Ready to Dominate?</h2>
+    <p class="contact-subtitle">Let’s architect your path to market dominance. Every empire starts with a single conversation.</p>
+
+    <form class="contact-form" id="contact-form">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="firstName">First Name *</label>
+          <input type="text" id="firstName" name="from_first" required>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name *</label>
+          <input type="text" id="lastName" name="from_last" required>
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="user_email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" name="user_phone" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="company">Company Name</label>
+        <input type="text" id="company" name="company">
+      </div>
+
+      <div class="form-group">
+        <label for="industry">Industry *</label>
+        <select id="industry" name="industry" required>
+          <option value="">Select Your Industry</option>
+          <option value="Real Estate">Real Estate</option>
+          <option value="Solar Energy">Solar Energy</option>
+          <option value="Roofing">Roofing</option>
+          <option value="Technology">Technology</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="budget">Investment Budget</label>
+        <select id="budget" name="budget">
+          <option value="">Select Budget Range</option>
+          <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+          <option value="$10,000 - $25,000">$10,000 - $25,000</option>
+          <option value="$25,000 - $50,000">$25,000 - $50,000</option>
+          <option value="$50,000+">$50,000+</option>
+        </select>
+      </div>
+
+      <div class="form-group full-width">
+        <label for="message">Tell Us About Your Goals *</label>
+        <textarea id="message" name="message" placeholder="Describe your current challenges, goals, and what success looks like for your business..." required></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Launch My Success Strategy</button>
+    </form>
+  </div>
+</section>
+
+<!--This is for emailjs contact form...................> 
+
+            <form id="contact-form">
+  <div class="form-grid">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" name="from_name" id="name" required />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" name="user_email" id="email" required />
+    </div>
+  </div>
+
+  <div class="form-grid">
+    <div class="form-group">
+      <label for="industry">Industry</label>
+      <select name="industry" id="industry" required>
+        <option value="">Select Industry</option>
+        <option value="Tech">Tech</option>
+        <option value="Healthcare">Healthcare</option>
+        <option value="Real Estate">Real Estate</option>
+        <option value="Finance">Finance</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="budget">Investment Budget</label>
+      <select name="budget" id="budget" required>
+        <option value="">Select Budget</option>
+        <option value="$1k–$5k">$1k–$5k</option>
+        <option value="$5k–$20k">$5k–$20k</option>
+        <option value="$20k+">$20k+</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea name="message" id="message" required></textarea>
+  </div>
+
+  <button type="submit">Launch My Success Strategy</button>
+</form>
+-->
             
-            <form class="contact-form" id="contactForm">
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="firstName">First Name *</label>
-                        <input type="text" id="firstName" name="firstName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="lastName">Last Name *</label>
-                        <input type="text" id="lastName" name="lastName" required>
-                    </div>
-                </div>
-                
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="company">Company Name</label>
-                    <input type="text" id="company" name="company">
-                </div>
-                
-                <div class="form-group">
-                    <label for="industry">Industry *</label>
-                    <select id="industry" name="industry" required>
-                        <option value="">Select Your Industry</option>
-                        <option value="real-estate">Real Estate</option>
-                        <option value="solar">Solar Energy</option>
-                        <option value="roofing">Roofing</option>
-                        <option value="tech">Technology</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="budget">Investment Budget</label>
-                    <select id="budget" name="budget">
-                        <option value="">Select Budget Range</option>
-                        <option value="5k-10k">$5,000 - $10,000</option>
-                        <option value="10k-25k">$10,000 - $25,000</option>
-                        <option value="25k-50k">$25,000 - $50,000</option>
-                        <option value="50k+">$50,000+</option>
-                    </select>
-                </div>
-                
-                <div class="form-group full-width">
-                    <label for="message">Tell Us About Your Goals *</label>
-                    <textarea id="message" name="message" placeholder="Describe your current challenges, goals, and what success looks like for your business..." required></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">Launch My Success Strategy</button>
-            </form>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h4>Headquarters</h4>
+            <div class="contact-info-grid">
+                <div class="info-box">
+                    <div class="info-icon">📍</div>
+                    <h3>Headquarters</h3>
                     <p>Cairo, Egypt</p>
                 </div>
-                <div class="contact-item">
-                    <h4>Response Time</h4>
+                <div class="info-box">
+                    <div class="info-icon">⏱️</div>
+                    <h3>Response Time</h3>
                     <p>24 Hours Guaranteed</p>
                 </div>
-                <div class="contact-item">
-                    <h4>Consultation</h4>
+                <div class="info-box">
+                    <div class="info-icon">💡</div>
+                    <h3>Consultation</h3>
                     <p>Free Strategy Session</p>
                 </div>
             </div>
@@ -196,12 +305,111 @@
     <footer>
         <div class="container">
             <p>&copy; 2025 Obelisk Solutions. All rights reserved. | Dominating markets since 2023 | Built for the ambitious
-                 <a href="https://www.linkedin.com/in/muhammad-gaweesh-780396174/" class="developer-link">Designed & Developed by Gaweesh</a>
+                 <a href="https://www.linkedin.com/in/muhammad-gaweesh-780396174/" class="developer-link">Designed & Developed by Dr@Gaweesh</a>
             </p>
 
         </div>
     </footer>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <!-- Building Cursor -->
+    <div class="building-cursor"></div>
+    
+    <!-- Scripts -->
+    <script src="cursor.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="js/stats-animation.js"></script>
+    <script>
+        // Theme Toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        const icon = themeToggle.querySelector('i');
+        
+        // Check for saved theme preference
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        document.body.className = currentTheme;
+        updateIcon();
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            const theme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+            localStorage.setItem('theme', theme);
+            updateIcon();
+        });
+        
+        function updateIcon() {
+            const isLight = document.body.classList.contains('light-mode');
+            icon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
+        }
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            document.body.classList.toggle('scrolled', window.scrollY > 50);
+        });
+        // Stats Counter Animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const statsSection = document.querySelector('.stats');
+            if (!statsSection) return;
 
-    <script src="script.js"></script>
+            const statNumbers = document.querySelectorAll('.stat-number');
+
+            const animateValue = (el, target, duration, suffix) => {
+                let start = 0;
+                let startTime = null;
+
+                function animation(currentTime) {
+                    if (startTime === null) startTime = currentTime;
+                    const timeElapsed = currentTime - startTime;
+                    const progress = Math.min(timeElapsed / duration, 1);
+                    const currentValue = Math.floor(progress * target);
+                    el.textContent = currentValue.toLocaleString() + suffix;
+                    if (progress < 1) {
+                        requestAnimationFrame(animation);
+                    } else {
+                        el.textContent = el.dataset.targetValue;
+                    }
+                }
+                requestAnimationFrame(animation);
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        statNumbers.forEach(numberEl => {
+                            const targetText = numberEl.dataset.targetValue.trim();
+                            const targetNumber = parseFloat(targetText);
+                            const suffix = targetText.replace(/[0-9.,]/g, '');
+
+                            if (!isNaN(targetNumber)) {
+                                animateValue(numberEl, targetNumber, 2000, suffix);
+                            }
+                        });
+                        observer.unobserve(statsSection);
+                    }
+                });
+            }, { threshold: 0.4 });
+            
+            // Prepare for animation
+            statNumbers.forEach(el => {
+                el.dataset.targetValue = el.textContent;
+                const suffix = el.textContent.replace(/[0-9.,]/g, '');
+                el.textContent = '0' + suffix;
+            });
+
+            observer.observe(statsSection);
+        });
+    </script>
 </body>
 </html>

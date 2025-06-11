@@ -55,82 +55,7 @@ function animateStats() {
     stats.forEach(stat => observer.observe(stat));
 }
 
-// Contact form handling with validation
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
     
-    // Basic form validation
-    const requiredFields = this.querySelectorAll('[required]');
-    let isValid = true;
-    
-    requiredFields.forEach(field => {
-        if (!field.value.trim()) {
-            field.style.borderColor = '#e74c3c';
-            field.style.boxShadow = '0 0 10px rgba(231, 76, 60, 0.3)';
-            isValid = false;
-        } else {
-            field.style.borderColor = '#ff6b35';
-            field.style.boxShadow = '0 0 10px rgba(255, 107, 53, 0.3)';
-        }
-    });
-    
-    // Email validation
-    const email = document.getElementById('email');
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (email.value && !emailRegex.test(email.value)) {
-        email.style.borderColor = '#e74c3c';
-        email.style.boxShadow = '0 0 10px rgba(231, 76, 60, 0.3)';
-        isValid = false;
-        showNotification('Please enter a valid email address', 'error');
-    }
-    
-    // Phone validation (basic)
-    const phone = document.getElementById('phone');
-    const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
-    if (phone.value && !phoneRegex.test(phone.value.replace(/[\s\-\(\)]/g, ''))) {
-        phone.style.borderColor = '#e74c3c';
-        phone.style.boxShadow = '0 0 10px rgba(231, 76, 60, 0.3)';
-        isValid = false;
-        showNotification('Please enter a valid phone number', 'error');
-    }
-    
-    if (isValid) {
-        // Collect form data
-        const formData = new FormData(this);
-        const data = Object.fromEntries(formData);
-        
-        // Show loading state
-        const submitBtn = this.querySelector('.submit-btn');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Launching Strategy...';
-        submitBtn.disabled = true;
-        
-        // Simulate form submission (replace with actual API call)
-        setTimeout(() => {
-            // Reset button
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-            
-            // Show success message
-            showNotification('Success! Your strategy session request has been submitted. We\'ll contact you within 24 hours.', 'success');
-            
-            // Reset form
-            this.reset();
-            
-            // Reset field styles
-            requiredFields.forEach(field => {
-                field.style.borderColor = '#333';
-                field.style.boxShadow = 'none';
-            });
-            
-            // Log data (for development - remove in production)
-            console.log('Form submitted:', data);
-            
-        }, 2000);
-    } else {
-        showNotification('Please fill in all required fields correctly', 'error');
-    }
-});
 
 // Notification system
 function showNotification(message, type = 'info') {
@@ -449,3 +374,18 @@ const debouncedScrollHandler = debounce(function() {
         nav.style.boxShadow = 'none';
     }
 }, 10);
+// Initialize with your public key
+emailjs.init("YfbpTDuvdltlfHWl3");
+
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  emailjs.sendForm("service_1nml0ou", "template_uvozqjf", this)
+    .then(function () {
+      alert("✅ Message sent successfully!");
+      e.target.reset();
+    }, function (error) {
+      console.error("❌ EmailJS Error:", error);
+      alert("❌ Failed to send message. Try again.");
+    });
+});
