@@ -2,98 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Obelisk Solutions - Elite business growth solutions for real estate professionals, solar installers, and roofing contractors.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Obelisk Solutions - Business Growth Partners</title>
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="styles.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    
-    <!-- Favicon -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cursor.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="Obelisk solutions logo.png" type="image/png">
     
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="cursor.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    <noscript>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="cursor.css">
-    </noscript>
+
+</head>
 <body>
     <!-- Navigation -->
-    <header class="site-header">
-        <div class="container">
-            <nav class="main-nav" aria-label="Main navigation">
-                <a href="index.html" class="logo" aria-label="Obelisk Solutions - Home">
-                    <img src="Obelisk solutions logo.png" alt="" class="logo-img" width="40" height="40" loading="lazy">
-                    <span class="logo-text">Obelisk Solutions</span>
-                </a>
-                
-                <!-- Mobile Menu Toggle -->
-                <button class="mobile-menu-toggle" 
-                        aria-label="Toggle menu" 
-                        aria-expanded="false" 
-                        aria-controls="primary-navigation"
-                        data-menu-toggle>
-                    <span class="sr-only">Menu</span>
-                    <span class="hamburger" aria-hidden="true"></span>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="Obelisk solutions logo.png" alt="Obelisk Solutions" class="logo-img">
+                <span class="logo-text">Obelisk Solutions</span>
+            </a>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <!-- Navigation Links -->
+            <div class="nav-menu">
+                <button class="mobile-menu-close" aria-label="Close menu" aria-expanded="false">
+                    <i class="fas fa-times"></i>
                 </button>
-                
-                <!-- Navigation Links -->
-                <div class="nav-menu" id="primary-navigation" aria-hidden="true" data-visible="false">
-                    <button class="mobile-menu-close" aria-label="Close menu" aria-expanded="false">
-                        <i class="fas fa-times" aria-hidden="true"></i>
-                    </button>
-                    <ul class="nav-links" role="menubar">
-                        <li role="none">
-                            <a href="#home" class="nav-link active" role="menuitem" data-section="home" tabindex="-1">
-                                <i class="fas fa-home" aria-hidden="true"></i>
-                                <span>Home</span>
-                            </a>
-                        </li>
-                        <li role="none">
-                            <a href="#services" class="nav-link" data-section="services" tabindex="-1">
-                                <i class="fas fa-cogs" aria-hidden="true"></i>
-                                <span>Services</span>
-                            </a>
-                        </li>
-                        <li role="none">
-                            <a href="#about" class="nav-link" data-section="about" tabindex="-1">
-                                <i class="fas fa-info-circle" aria-hidden="true"></i>
-                                <span>About</span>
-                            </a>
-                        </li>
-                        <li role="none">
-                            <a href="#testimonials" class="nav-link" role="menuitem" data-section="testimonials" tabindex="-1">
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <span>Testimonials</span>
-                            </a>
-                        </li>
-                        <li role="none">
-                            <a href="#contact" class="nav-link" data-section="contact" tabindex="-1">
-                                <i class="fas fa-envelope" aria-hidden="true"></i>
-                                <span>Contact</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Overlay for mobile menu -->
-                <div class="nav-overlay" data-nav-overlay></div>
-            </nav>
+                <ul class="nav-links">
+                    <li>
+                        <a href="#home" class="nav-link active" data-section="home">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#services" class="nav-link" data-section="services">
+                            <i class="fas fa-cogs"></i>
+                            <span>Services</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about" class="nav-link" data-section="about">
+                            <i class="fas fa-info-circle"></i>
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#video-reviews" class="nav-link" data-section="testimonials">
+                            <i class="fas fa-star"></i>
+                            <span>Testimonials</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="nav-link" data-section="contact">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Overlay for mobile menu -->
+            <div class="nav-overlay"></div>
         </div>
-    </header>
+    </nav>
     
     <!-- Theme Toggle -->
     <button class="theme-toggle" aria-label="Toggle theme">
         <i class="fas fa-moon"></i>
     </button>
-
-    <!-- Navigation Overlay -->
-    <div class="nav-overlay" data-nav-overlay aria-hidden="true" data-visible="false"></div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
