@@ -1,11 +1,13 @@
 /* Modern CSS Reset and Base Styles */
 :root {
     /* Mobile-first variables */
-    --mobile-padding: 1.5rem;
-    --section-padding: 4rem 1.5rem;
-    --heading-font-size: 2.5rem;
-    --subheading-font-size: 1.25rem;
+    --mobile-padding: 1rem;
+    --section-padding: 3rem 1rem;
+    --heading-font-size: 2rem;
+    --subheading-font-size: 1.1rem;
     --base-font-size: 1rem;
+    --button-min-height: 48px; /* Minimum touch target size */
+    --link-min-height: 44px; /* Minimum touch target size */
     --primary: #00f0ff;
     --secondary: #7000ff;
     --accent: #b300ff;
@@ -70,8 +72,11 @@ h4 { font-size: 1.5rem; }
 
 /* Buttons */
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 0.8rem 1.8rem;
+    min-height: var(--button-min-height);
     border-radius: 50px;
     font-weight: 600;
     text-decoration: none;
@@ -80,6 +85,13 @@ h4 { font-size: 1.5rem; }
     cursor: pointer;
     border: none;
     font-size: 1rem;
+    -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+    touch-action: manipulation;
+}
+
+/* Make buttons and links easier to tap on mobile */
+a, button, input, .btn {
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* Sections */
@@ -101,6 +113,10 @@ nav {
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+    
+    /* Prevent horizontal scroll on mobile */
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 .nav-container {
@@ -2860,8 +2876,78 @@ footer::before {
     z-index: 1;
 }
 
-/* Responsive Design */
+/* Responsive Design - Additional Optimizations */
 @media (max-width: 768px) {
+    /* Prevent horizontal scroll */
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    /* Optimize typography for mobile */
+    h1 { line-height: 1.2; margin-bottom: 1rem; }
+    h2 { line-height: 1.25; margin-bottom: 0.875rem; }
+    h3 { line-height: 1.3; margin-bottom: 0.75rem; }
+    
+    /* Improve spacing */
+    section {
+        margin: 0;
+        padding: 2rem var(--mobile-padding);
+    }
+    
+    /* Optimize hero section for mobile */
+    .hero {
+        padding-top: 6rem;
+        padding-bottom: 3rem;
+    }
+    
+    /* Improve button and link tap targets */
+    a, button, [role="button"], [tabindex] {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 0.5rem 1rem;
+    }
+    
+    /* Optimize form elements */
+    input, textarea, select {
+        font-size: 16px; /* Prevent zoom on focus in iOS */
+        padding: 0.75rem;
+    }
+    
+    /* Improve touch feedback */
+    button, a, input[type="button"], input[type="submit"] {
+        -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+        transition: transform 0.1s ease, opacity 0.1s ease;
+    }
+    
+    button:active, a:active, input[type="button"]:active, input[type="submit"]:active {
+        transform: scale(0.98);
+        opacity: 0.9;
+    }
+    
+    /* Optimize images and media */
+    img, video, iframe {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Improve readability of text blocks */
+    p, li, td, th, label {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    /* Adjust spacing for mobile */
+    .container {
+        padding-left: var(--mobile-padding);
+        padding-right: var(--mobile-padding);
+    }
+    
+    /* Optimize navigation for touch */
+    .nav-links a {
+        padding: 0.5rem 0.75rem;
+        margin: 0 0.25rem;
+    }
     .hero h1 {
         font-size: 2.8rem;
     }

@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0a0a1a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Obelisk Solutions</title>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="stylesheet" href="styles.css">
@@ -24,9 +28,6 @@
             
             <!-- Navigation Links -->
             <div class="nav-menu">
-                <button class="mobile-menu-close" aria-label="Close menu" aria-expanded="false">
-                    <i class="fas fa-times"></i>
-                </button>
                 <ul class="nav-links">
                     <li>
                         <a href="#home" class="nav-link active" data-section="home">
@@ -60,9 +61,7 @@
                     </li>
                 </ul>
             </div>
-            <!-- Overlay for mobile menu -->
-            <div class="nav-overlay"></div>
-        </div>
+           
     </nav>
     
     <!-- Hero Section -->
@@ -478,6 +477,35 @@
                 behavior: 'smooth'
             });
         });
+    </script>
+    <script>
+        // Prevent 300ms delay on tap for mobile browsers
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add touch-action for better scrolling
+            document.body.style.touchAction = 'manipulation';
+            
+            // Add class to body for touch devices
+            if ('ontouchstart' in window || navigator.maxTouchPoints) {
+                document.body.classList.add('is-touch-device');
+            }
+            
+            // Prevent zoom on double-tap (iOS)
+            let lastTouchEnd = 0;
+            document.addEventListener('touchend', function(event) {
+                const now = (new Date()).getTime();
+                if (now - lastTouchEnd <= 300) {
+                    event.preventDefault();
+                }
+                lastTouchEnd = now;
+            }, false);
+        });
+        
+        // Prevent iOS elastic scrolling
+        document.body.addEventListener('touchmove', function(e) {
+            if (e.target === document.body || e.target === document.documentElement) {
+                e.preventDefault();
+            }
+        }, { passive: false });
     </script>
 </body>
 </html>
