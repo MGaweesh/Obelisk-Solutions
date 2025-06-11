@@ -271,8 +271,44 @@ function initFormEffects() {
     });
 }
 
+// Custom cursor initialization
+function initCustomCursor() {
+    const cursor = document.createElement('div');
+    cursor.className = 'custom-cursor';
+    document.body.appendChild(cursor);
+    document.body.classList.add('custom-cursor-enabled');
+
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    // Add hover effect on interactive elements
+    const interactiveElements = ['a', 'button', 'input', 'textarea', 'select', '.cta-button', '.service-card'];
+    interactiveElements.forEach(selector => {
+        document.querySelectorAll(selector).forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                document.body.classList.add('cursor-hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                document.body.classList.remove('cursor-hover');
+            });
+        });
+    });
+
+    // Click effect
+    document.addEventListener('mousedown', () => {
+        document.body.classList.add('cursor-click');
+    });
+    document.addEventListener('mouseup', () => {
+        document.body.classList.remove('cursor-click');
+    });
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize custom cursor
+    initCustomCursor();
     // Initialize animations
     animateStats();
     initScrollAnimations();

@@ -454,5 +454,30 @@
             observer.observe(statsSection);
         });
     </script>
+    
+    <!-- Back to Top Button -->
+    <button id="scrollTopBtn" class="scroll-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <script>
+        // Back to Top Button
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
