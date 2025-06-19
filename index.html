@@ -210,34 +210,39 @@
         
         <div class="container">
             <div class="section-title">
-                <h2><i class="fas fa-quote-left"></i> <span>Client Feedback</span> <i class="fas fa-rocket"></i></h2>
-                <p>Listen to our clients from across the galaxy</p>
+                <h2><i class="fas fa-headset"></i> <span>Hear our Agents</span> <i class="fas fa-phone"></i></h2>
+                <p>Experience our professional calling approach</p>
             </div>
             <div class="voice-grid">
                 <div class="voice-card">
                     <div class="voice-card-inner">
                         <div class="voice-wrapper">
                             <div class="audio-container">
-                                <div class="audio-controls">
-                                    <button class="play-pause">
-                                        <i class="fas fa-play"></i>
-                                    </button>
-                                    <div class="progress-container">
-                                        <div class="progress-bar"></div>
-                                    </div>
-                                    <span class="time">0:00 / 0:00</span>
-                                </div>
-                                <audio>
-                                    <source src="client-feedback-1.mp3" type="audio/mp3">
+                                <audio controls preload="metadata" style="width: 100%;">
+                                    <source src="Voice 1.mp3" type="audio/mp3">
                                     Your browser does not support the audio element.
                                 </audio>
+                                <script>
+                                // Add event listener for audio playback
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    const audio = document.querySelector('.audio-container audio');
+                                    if (audio) {
+                                        audio.addEventListener('canplay', function() {
+                                            console.log('Audio can be played');
+                                        });
+                                        audio.addEventListener('error', function(e) {
+                                            console.error('Audio error:', audio.error);
+                                        });
+                                    }
+                                });
+                                </script>
                             </div>
                         </div>
                         <div class="voice-info">
                             <div class="client-avatar">
                                 <i class="fas fa-user-astronaut"></i>
                             </div>
-                            <h4>John Smith <span class="client-title">Real Estate Professional</span></h4>
+                            <h4>Kevin</h4>
                             <div class="stars-rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -245,7 +250,6 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                             </div>
-                            <p class="quote">"Obelisk Solutions helped us double our lead generation in just 3 months. Their strategic approach and execution were exceptional."</p>
                         </div>
                     </div>
                 </div>
@@ -254,34 +258,38 @@
                     <div class="voice-card-inner">
                         <div class="voice-wrapper">
                             <div class="audio-container">
-                                <div class="audio-controls">
-                                    <button class="play-pause">
-                                        <i class="fas fa-play"></i>
-                                    </button>
-                                    <div class="progress-container">
-                                        <div class="progress-bar"></div>
-                                    </div>
-                                    <span class="time">0:00 / 0:00</span>
-                                </div>
-                                <audio>
-                                    <source src="client-feedback-2.mp3" type="audio/mp3">
+                                <audio controls preload="metadata" style="width: 100%;">
+                                    <source src="Voice 2 .mp3" type="audio/mp3">
                                     Your browser does not support the audio element.
                                 </audio>
+                                <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    const audios = document.querySelectorAll('.audio-container audio');
+                                    const audio = audios[audios.length - 1]; // Get the last audio element
+                                    if (audio) {
+                                        audio.addEventListener('canplay', function() {
+                                            console.log('Audio can be played');
+                                        });
+                                        audio.addEventListener('error', function(e) {
+                                            console.error('Audio error:', audio.error);
+                                        });
+                                    }
+                                });
+                                </script>
                             </div>
                         </div>
                         <div class="voice-info">
                             <div class="client-avatar">
                                 <i class="fas fa-user-astronaut"></i>
                             </div>
-                            <h4>Sarah Johnson <span class="client-title">Solar Installer</span></h4>
+                            <h4>Tommy</h4>
                             <div class="stars-rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
+                                <i class="fas fa-star"></i>
                             </div>
-                            <p class="quote">"The quality of leads we received from Obelisk was unmatched. Their team truly understands our industry."</p>
                         </div>
                     </div>
                 </div>
@@ -391,9 +399,7 @@
         <div class="particles"></div>
         
         <div class="container">
-            <p>&copy; 2025 Obelisk Solutions. All rights reserved. | Dominating markets since 2023 | Built for the ambitious
-                 <a href="https://www.linkedin.com/in/muhammad-gaweesh-780396174/" class="developer-link" target="_blank" rel="noopener noreferrer">Designed & Developed by Dr@Gaweesh</a>
-            </p>
+            <p>&copy; 2025 Obelisk Solutions. All rights reserved. | Dominating markets since 2023</p>
         </div>
     </footer>
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
