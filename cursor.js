@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
         cursor.style.top = `${e.clientY}px`;
     });
     
-    // Add hover effect to interactive elements
+    // Add hover effect to interactive elements (excluding navbar links)
     const hoverTargets = [
-        'button', '.btn', 
-        '[role="button"]', '.info-box',
+        'button:not(.nav-link)', '.btn', 
+        '[role="button"]:not(.nav-link)', '.info-box',
         'input', 'textarea', 'select',
-        'a:not(.developer-link)'
+        'a:not(.developer-link, .nav-link)'
     ];
     
     hoverTargets.forEach(selector => {

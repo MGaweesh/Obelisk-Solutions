@@ -12,10 +12,15 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="cursor.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
     <link rel="icon" href="Obelisk solutions logo.png" type="image/png">
-    
-
+    <style>
+        /* Logo text style */
+        #main-logo-text {
+            color: white !important;
+            text-shadow: none !important;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -23,7 +28,7 @@
         <div class="nav-container">
             <a href="index.html" class="logo">
                 <img src="Obelisk solutions logo.png" alt="Obelisk Solutions" class="logo-img">
-                <span class="logo-text">Obelisk Solutions</span>
+                <span class="logo-text" id="main-logo-text" style="color: white !important; text-shadow: none !important; -webkit-text-fill-color: white !important; -webkit-text-stroke: 0 !important; font-variation-settings: normal !important; text-decoration: none !important; background: none !important;">Obelisk Solutions</span>
             </a>
             
             <!-- Navigation Links -->
@@ -56,7 +61,7 @@
                     <li>
                         <a href="#contact" class="nav-link" data-section="contact">
                             <i class="fas fa-envelope"></i>
-                            <span>Contact</span>
+                            <span>Contact us</span>
                         </a>
                     </li>
                 </ul>
@@ -74,8 +79,11 @@
         
         <div class="hero-content">
             <h1>Dominate Your Market</h1>
-            <p class="slogan">Choose Obelisk Solutions, Choose your way to the finish line</p>
-            <p>Elite business growth solutions for real estate professionals, solar installers, roofing contractors, and ambitious businesses ready to scale beyond limits.</p>
+            <h2 class="slogan">
+                <span><span class="text-white">Choose</span> Obelisk Solutions</span>
+                <span>Choose your way to the finish line</span>
+            </h2>
+
             <a href="#contact" class="cta-button">Start Dominating Now</a>
         </div>
     </section>
@@ -119,7 +127,7 @@
         
         <div class="container">
             <div class="section-title">
-                <h2><i class="fas fa-crown"></i> <span>Elite Services</span></h2>
+                <h2><i class="fas fa-crown"></i> <span>Services</span></h2>
                 <p>Cutting-edge solutions engineered to accelerate your business growth across high-impact industries</p>
             </div>
             
@@ -169,7 +177,7 @@
         
         <div class="container">
             <div class="section-title">
-                <h2>About Us</h2>
+                <h2>About us</h2>
                 <p>Transforming businesses with innovative solutions and proven strategies for sustainable growth.</p>
             </div>
             
@@ -192,8 +200,8 @@
         </div>
     </section>
 
-    <!-- Video Reviews Section -->
-    <section id="video-reviews" class="video-reviews">
+    <!-- Client Voice Feedback Section -->
+    <section id="video-reviews" class="voice-feedback">
         <!-- Space Background Elements -->
         <div class="stars"></div>
         <div class="stars2"></div>
@@ -202,31 +210,80 @@
         
         <div class="container">
             <div class="section-title">
-                <h2><i class="fas fa-quote-left"></i> <span>Testimonials</span></h2>
-                <p>Hear directly from our clients how Obelisk Solutions transformed their growth strategies.</p>
+                <h2><i class="fas fa-quote-left"></i> <span>Client Feedback</span> <i class="fas fa-rocket"></i></h2>
+                <p>Listen to our clients from across the galaxy</p>
             </div>
-            <div class="video-grid">
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <iframe 
-                            src="https://www.youtube.com/embed/Z2nF2BbN_8k?autoplay=0&mute=1" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                        </iframe>
+            <div class="voice-grid">
+                <div class="voice-card">
+                    <div class="voice-card-inner">
+                        <div class="voice-wrapper">
+                            <div class="audio-container">
+                                <div class="audio-controls">
+                                    <button class="play-pause">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                    <div class="progress-container">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                    <span class="time">0:00 / 0:00</span>
+                                </div>
+                                <audio>
+                                    <source src="client-feedback-1.mp3" type="audio/mp3">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+                        <div class="voice-info">
+                            <div class="client-avatar">
+                                <i class="fas fa-user-astronaut"></i>
+                            </div>
+                            <h4>John Smith <span class="client-title">Real Estate Professional</span></h4>
+                            <div class="stars-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="quote">"Obelisk Solutions helped us double our lead generation in just 3 months. Their strategic approach and execution were exceptional."</p>
+                        </div>
                     </div>
-                    <h4>Client Testimonial</h4>
                 </div>
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <iframe 
-                            src="https://www.youtube.com/embed/Z2nF2BbN_8k?autoplay=0&mute=1" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                        </iframe>
+                
+                <div class="voice-card">
+                    <div class="voice-card-inner">
+                        <div class="voice-wrapper">
+                            <div class="audio-container">
+                                <div class="audio-controls">
+                                    <button class="play-pause">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                    <div class="progress-container">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                    <span class="time">0:00 / 0:00</span>
+                                </div>
+                                <audio>
+                                    <source src="client-feedback-2.mp3" type="audio/mp3">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+                        <div class="voice-info">
+                            <div class="client-avatar">
+                                <i class="fas fa-user-astronaut"></i>
+                            </div>
+                            <h4>Sarah Johnson <span class="client-title">Solar Installer</span></h4>
+                            <div class="stars-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p class="quote">"The quality of leads we received from Obelisk was unmatched. Their team truly understands our industry."</p>
+                        </div>
                     </div>
-                    <h4>Client Testimonial</h4>
                 </div>
             </div>
         </div>
@@ -479,6 +536,213 @@
         });
     </script>
     <script>
+        // Text-to-Speech Functionality with Web Speech API
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if browser supports Web Speech API
+            if (!('speechSynthesis' in window)) {
+                alert('Your browser does not support the Web Speech API. Please try a modern browser like Chrome or Edge.');
+                return;
+            }
+
+            // Voice settings
+            const voices = [];
+            let voice1, voice2;
+            
+            // Get available voices and set our preferred voices
+            function loadVoices() {
+                voices.push(...window.speechSynthesis.getVoices());
+                
+                // Try to find natural-sounding voices
+                voice1 = voices.find(voice => voice.name.includes('Google US English') || 
+                                           voice.name.includes('Samantha') || 
+                                           voice.lang === 'en-US');
+                
+                voice2 = voices.find(voice => (voice.name.includes('Google UK English') || 
+                                             voice.name.includes('Daniel') || 
+                                             voice.lang === 'en-GB') && 
+                                             voice !== voice1);
+                
+                // Fallback to any available English voices
+                if (!voice1) voice1 = voices.find(v => v.lang.startsWith('en'));
+                if (!voice2) voice2 = voices.find(v => v.lang.startsWith('en') && v !== voice1);
+                
+                // If we still don't have voices, use the first available
+                if (!voice1 && voices.length > 0) voice1 = voices[0];
+                if (!voice2 && voices.length > 1) voice2 = voices[1];
+            }
+            
+            // Load voices when they become available
+            if (speechSynthesis.onvoiceschanged !== undefined) {
+                speechSynthesis.onvoiceschanged = loadVoices;
+            }
+            loadVoices();
+            
+            // Create speech synthesis for each testimonial
+            const testimonials = [
+                {
+                    text: "Obelisk Solutions helped us double our lead generation in just 3 months. Their strategic approach and execution were exceptional.",
+                    name: "John Smith",
+                    title: "Real Estate Professional"
+                },
+                {
+                    text: "The quality of leads we received from Obelisk was unmatched. Their team truly understands our industry.",
+                    name: "Sarah Johnson",
+                    title: "Solar Installer"
+                }
+            ];
+            
+            // Create audio elements and set up players
+            const audioPlayers = document.querySelectorAll('.voice-card');
+            
+            audioPlayers.forEach((player, index) => {
+                const testimonial = testimonials[index];
+                const playPauseBtn = player.querySelector('.play-pause');
+                const playPauseIcon = playPauseBtn.querySelector('i');
+                const progressBar = player.querySelector('.progress-bar');
+                const timeDisplay = player.querySelector('.time');
+                const progressContainer = player.querySelector('.progress-container');
+                
+                let utterance = null;
+                let isPlaying = false;
+                let progressInterval = null;
+                let startTime = 0;
+                let duration = 0;
+                
+                // Format time in seconds to MM:SS
+                function formatTime(seconds) {
+                    const mins = Math.floor(seconds / 60);
+                    const secs = Math.floor(seconds % 60);
+                    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+                }
+                
+                // Update progress display
+                function updateProgress() {
+                    if (!duration) return;
+                    const currentTime = (Date.now() - startTime) / 1000;
+                    const progressPercent = Math.min((currentTime / duration) * 100, 100);
+                    progressBar.style.width = `${progressPercent}%`;
+                    timeDisplay.textContent = `${formatTime(currentTime)} / ${formatTime(duration)}`;
+                    
+                    if (currentTime >= duration) {
+                        stopPlayback();
+                    }
+                }
+                
+                // Start playback
+                function startPlayback() {
+                    if (isPlaying) return;
+                    
+                    // Stop any currently playing audio
+                    stopAllAudio();
+                    
+                    // Create new speech synthesis
+                    utterance = new SpeechSynthesisUtterance(testimonial.text);
+                    utterance.voice = index % 2 === 0 ? voice1 : voice2;
+                    utterance.rate = 0.9; // Slightly slower than normal
+                    utterance.pitch = 1.0;
+                    utterance.volume = 1.0;
+                    
+                    // Estimate duration (words per minute)
+                    const words = testimonial.text.split(' ').length;
+                    duration = (words / 150) * 60; // Average speaking rate: 150 WPM
+                    
+                    // Start progress tracking
+                    startTime = Date.now();
+                    progressInterval = setInterval(updateProgress, 100);
+                    
+                    // Set up event handlers
+                    utterance.onend = function() {
+                        stopPlayback();
+                    };
+                    
+                    utterance.onerror = function(event) {
+                        console.error('SpeechSynthesis error:', event);
+                        stopPlayback();
+                    };
+                    
+                    // Start speaking
+                    speechSynthesis.speak(utterance);
+                    isPlaying = true;
+                    playPauseIcon.className = 'fas fa-pause';
+                }
+                
+                // Stop playback
+                function stopPlayback() {
+                    if (progressInterval) {
+                        clearInterval(progressInterval);
+                        progressInterval = null;
+                    }
+                    
+                    if (isPlaying) {
+                        speechSynthesis.cancel();
+                        isPlaying = false;
+                        playPauseIcon.className = 'fas fa-play';
+                        
+                        // Reset progress if not at the end
+                        if (progressBar.style.width !== '100%') {
+                            progressBar.style.width = '0%';
+                            timeDisplay.textContent = `0:00 / ${formatTime(duration)}`;
+                        }
+                    }
+                }
+                
+                // Toggle play/pause
+                function togglePlay() {
+                    if (isPlaying) {
+                        stopPlayback();
+                    } else {
+                        startPlayback();
+                    }
+                }
+                
+                // Stop all audio players
+                function stopAllAudio() {
+                    speechSynthesis.cancel();
+                    document.querySelectorAll('.voice-card').forEach(card => {
+                        const icon = card.querySelector('.play-pause i');
+                        if (icon) icon.className = 'fas fa-play';
+                        const bar = card.querySelector('.progress-bar');
+                        if (bar) bar.style.width = '0%';
+                    });
+                }
+                
+                // Set progress when clicking on progress bar
+                function setProgress(e) {
+                    if (!duration) return;
+                    
+                    const width = this.clientWidth;
+                    const clickX = e.offsetX;
+                    const percent = clickX / width;
+                    
+                    // For TTS, we can't seek, so we'll just restart from the estimated position
+                    stopPlayback();
+                    startTime = Date.now() - (duration * percent * 1000);
+                    progressBar.style.width = `${percent * 100}%`;
+                    timeDisplay.textContent = `${formatTime(duration * percent)} / ${formatTime(duration)}`;
+                }
+                
+                // Initialize time display
+                const words = testimonial.text.split(' ').length;
+                const estimatedDuration = (words / 150) * 60; // 150 WPM
+                timeDisplay.textContent = `0:00 / ${formatTime(estimatedDuration)}`;
+                
+                // Event Listeners
+                playPauseBtn.addEventListener('click', togglePlay);
+                progressContainer.addEventListener('click', setProgress);
+                
+                // Clean up on page unload
+                window.addEventListener('beforeunload', stopPlayback);
+                
+                // Add keyboard accessibility
+                playPauseBtn.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        togglePlay();
+                    }
+                });
+            });
+        });
+        
         // Prevent 300ms delay on tap for mobile browsers
         document.addEventListener('DOMContentLoaded', function() {
             // Add touch-action for better scrolling
